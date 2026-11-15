@@ -3,7 +3,7 @@ services:
     name: bus-ticket-booking-system
     env: node
     plan: free
-    buildCommand: unzip -o bus-ticket-booking.zip && npm install && npm run seed
+    buildCommand: (unzip -o bus-ticket-booking.zip || true) && npm install && npm run seed
     startCommand: node backend/server.js
     envVars:
       - key: PORT
