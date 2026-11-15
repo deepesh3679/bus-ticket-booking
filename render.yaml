@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bus-ticket-booking-system
+    env: node
+    plan: free
+    buildCommand: unzip -o bus-ticket-booking.zip && npm install && npm run seed
+    startCommand: node backend/server.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
